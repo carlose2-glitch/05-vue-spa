@@ -8,7 +8,7 @@
         </a>
       </div>
       <nav class="ml-auto space-x-4 flex items-center h-10 sm:space-x-6">
-        <RouterLink to="/"> Home </RouterLink>
+        <RouterLink :to="{ name: 'home' }"> Home </RouterLink>
         <RouterLink to="/Features"> Features </RouterLink>
         <RouterLink to="/Pricing"> Pricing </RouterLink>
         <RouterLink to="/Contact"> Contact </RouterLink>
@@ -17,7 +17,7 @@
     <!-- Fin Header -->
 
     <!-- Main -->
-    <main class="flex-1 flex items-center justify-center py-6">
+    <main class="flex-1 flex items-center justify-center">
       <RouterView />
     </main>
     <!-- Fin Main -->
