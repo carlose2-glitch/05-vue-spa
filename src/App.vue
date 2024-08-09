@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <h1 className="text-3xl font-bold underline">Hello world!</h1>
-  </div>
+  <HomePage />
 </template>
 
-<script setup lang="ts"></script>
-
-<style scoped></style>
+<script lang="ts" setup>
+import HomePage from '@/modules/landing/pages/HomePage.vue';
+</script>
