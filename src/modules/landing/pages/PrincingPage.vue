@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen flex justify-center items-center">
+  <div class="flex justify-center items-center">
     <div class="">
       <div class="text-center font-semibold">
         <h1 class="text-5xl">

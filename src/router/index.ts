@@ -6,23 +6,48 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomePage,
+      name: 'landing',
+      component: () => import('@/modules/landing/layouts/LandingLayout.vue'),
+      children: [
+        {
+          path: '/',
+          name: 'home',
+          component: HomePage,
+        },
+        {
+          path: '/features',
+          name: 'features',
+          component: () => import('@/modules/landing/pages/FeaturesPages.vue'),
+        },
+        {
+          path: '/pricing',
+          name: 'pricing',
+          component: () => import('@/modules/landing/pages/PrincingPage.vue'),
+        },
+        {
+          path: '/contact',
+          name: 'contact',
+          component: () => import('@/modules/landing/pages/ContactPage.vue'),
+        },
+      ],
     },
+    //auth
     {
-      path: '/features',
-      name: 'features',
-      component: () => import('@/modules/landing/pages/FeaturesPages.vue'),
-    },
-    {
-      path: '/pricing',
-      name: 'pricing',
-      component: () => import('@/modules/landing/pages/PrincingPage.vue'),
-    },
-    {
-      path: '/contact',
-      name: 'contact',
-      component: () => import('@/modules/landing/pages/ContactPage.vue'),
+      path: '/auth',
+      redirect: { name: 'login' },
+      component: () => import('@/modules/auth/layouts/AuthLayout.vue'),
+      children: [
+        {
+          path: '/login',
+          name: 'login',
+          component: () => import('@/modules/auth/pages/LoginPage.vue'),
+        },
+        {
+          path: '/register',
+          name: 'register',
+          component: () => import('@/modules/auth/pages/RegisterPage.vue'),
+        },
+      ],
     },
   ],
 });
