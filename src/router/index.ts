@@ -34,7 +34,11 @@ const router = createRouter({
         {
           path: '/pokemon/:id',
           name: 'pokemon',
-          props: true,
+          //props: true,
+          props: (route) => {
+            const id = Number(route.params.id);
+            return isNaN(id) ? { id: 1 } : { id };
+          },
           component: () => import('@/modules/pokemons/pages/PokemonPage.vue'),
         },
       ],
